@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateReadme = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -57,26 +57,7 @@ const questions = [
             }
         }
     },
-    {
-        type: 'input',
-        name: 'contribute',
-        message: 'Please provide guidelines for contributing. (Required)',
-        when: ({ confirmContributers }) => {
-            if (confirmContributers) {
-                return true;
-            } else {
-                return false;
-            }
-        },
-        validate: contributerInput => {
-            if (contributerInput) {
-                return true;
-            } else {
-                console.log('Please enter contributer guidelines!');
-                return false;
-            }
-        }
-    },
+   
     {
         type: 'input',
         name: 'test',
@@ -124,13 +105,55 @@ const questions = [
         }
     },
 
+
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+//function writeToFile(fileName, data) {}
+
 
 // TODO: Create a function to initialize app
-function init() {}
+//function init() {}
 
 // Function call to initialize app
-init();
+//init();
+const writeFile = fileContent => {
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./utils/generated-README.md', fileContent, err => {
+            if (err) {
+                reject(err);
+                return;
+            }
+
+            resolve({
+                ok: true,
+                message: 'File created!'
+            });
+        });
+    });
+};
+
+// function to prompt questions and store user inputs
+const init = () => {
+
+    return inquirer.prompt(questions)
+    .then(readmeData => {
+        return readmeData;
+    })
+}
+
+// Function call to initialize app
+init()
+.then(readmeData => {
+    console.log(readmeData);
+    return generateMarkdown(readmeData);
+})
+.then(pageMD => {
+    return writeFile(pageMD);
+})
+.then(writeFileResponse => {
+    console.log(writeFileResponse.message);
+})
+.catch(err => {
+    console.log(err);
+})

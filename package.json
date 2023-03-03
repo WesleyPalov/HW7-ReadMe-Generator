@@ -9,6 +9,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^8.2.4"
-  }
+    "inquirer": "^8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WesleyPalov/HW7-ReadMe-Generator.git"
+  },
+  "keywords": [
+    "readme"
+  ],
+  "bugs": {
+    "url": "https://github.com/WesleyPalov/HW7-ReadMe-Generator/issues"
+  },
+  "homepage": "https://github.com/WesleyPalov/HW7-ReadMe-Generator#readme"
 }

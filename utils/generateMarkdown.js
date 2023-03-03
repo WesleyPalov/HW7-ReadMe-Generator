@@ -21,6 +21,15 @@ function renderLicenseLink(license) {
       return ' ';
     }
 }
+function renderLicenseTOC(license) {
+  if (license !== 'no license') {
+  return `
+  * [License](#license)
+    `;
+  } else {
+    return ' ';
+  }
+ }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -64,9 +73,7 @@ function generateMarkdown(data) {
   [Mark Down Tutorial](https://agea.github.io/tutorial.md/)
   
   ${renderLicenseSection(data.license)}
-  ## [Contributing](#table-of-contents)
-  
-  ${renderContributingSection(data.confirmContributers, data.contribute)}
+
   ## [Tests](#table-of-contents)
   ${data.test}
   ## [Questions](#table-of-contents)
