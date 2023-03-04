@@ -41,3 +41,5 @@ Here are some guidelines to help you get started:
 
 -A `package.json` with the required dependencies has been created.
 ```
+![Capturereadme](https://user-images.githubusercontent.com/122843028/222872567-754c2b08-b8a1-4fc1-9e99-d20e72b65d50.PNG)
+
