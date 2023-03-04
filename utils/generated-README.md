@@ -1,7 +1,7 @@
 
   # Professional-README-Generator
   
-  ![badge](https://img.shields.io/badge/license-apache-blue)
+  ![badge](https://img.shields.io/badge/license-mit-blue)
     
   ## Table-of-Contents
   * [Description](#description)
@@ -19,8 +19,10 @@
   The project will help a user generate a README without having to worry about applying proper mark down syntax.
   ## [Installation](#table-of-contents)
   Click the repository link below. Open the file in VS Code or whatever editor you work with.
+  [GitHub](https://github.com/WesleyPalov/HW7-ReadMe-Generator)
+
   ## [Usage](#table-of-contents)
-  To create professional ReadMefile.
+  Open the terminal in VS Code and make sure you’re in the root directory ‘challenge-9-professional-README-generator. 
 
   ## [Tutorial](#table-of-contents)
   For more information on how to add screenshots for examples, visit the following website:
@@ -31,7 +33,7 @@
   ## [License](#table-of-contents)
   The application is covered under the following license:
   
-    [apache](https://choosealicense.com/licenses/apache)
+    [mit](https://choosealicense.com/licenses/mit)
       
     
 
@@ -43,5 +45,5 @@
 
   ## [Email](#table-of-contents)
   Please contact me via email:
-  [Email: wesleypalov](mailto:wesleypalov)
+  [Email: wesleypalov@yahoo.com](mailto:wesleypalov@yahoo.com)
 
