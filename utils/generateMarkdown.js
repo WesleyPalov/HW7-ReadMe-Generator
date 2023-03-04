@@ -21,7 +21,10 @@ function renderLicenseLink(license) {
       return ' ';
     }
 }
-function renderLicenseTOC(license) {
+
+ // Function that returns license in table of contents
+ // If there is no license, return an empty string
+ function renderLicenseTOC(license) {
   if (license !== 'no license') {
   return `
   * [License](#license)
@@ -30,20 +33,22 @@ function renderLicenseTOC(license) {
     return ' ';
   }
  }
-
-// TODO: Create a function that returns the license section of README
+// Function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license !== 'no license') {
-    return `
-    ## [License](#table-of-contents)
-    The application is covered under the following license:
-    ${renderLicenseLink(license)}
-      `;
-    } else {
-      return ' ';
-    }
-}
+  return `
+  ## [License](#table-of-contents)
+  The application is covered under the following license:
+  ${renderLicenseLink(license)}
+    `;
+  } else {
+    return ' ';
+  }
+ }
+
+
+
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -54,31 +59,36 @@ function generateMarkdown(data) {
   * [Description](#description)
   * [Installation](#installation)
   * [Usage](#usage)
-  ${renderLicenseTOC(data.license)}
-  * [Contributing](#contributing)
+  * [Tutorial](#tutorial)
+   ${renderLicenseTOC(data.license)}
   * [Tests](#tests)
   * [Questions](#questions)
+  * [Email](#email)
   
   ## [Description](#table-of-contents)
-  ${data.what}
-  ${data.why}
-  ${data.how}
+  ${data.description}
   ## [Installation](#table-of-contents)
   ${data.installation}
+  [GitHub](https://github.com/WesleyPalov/HW7-ReadMe-Generator)
+
   ## [Usage](#table-of-contents)
   ${data.usage}
-  
+
+  ## [Tutorial](#table-of-contents)
   For more information on how to add screenshots for examples, visit the following website:
   
-  [Mark Down Tutorial](https://agea.github.io/tutorial.md/)
+  [Mark Down Tutorial](https://www.selecthub.com/resources/how-to-take-a-screenshot/#4)
   
   ${renderLicenseSection(data.license)}
 
   ## [Tests](#table-of-contents)
   ${data.test}
   ## [Questions](#table-of-contents)
-  Please contact me using the following links:
+  Please contact me using the following link:
   [GitHub](https://github.com/${data.githubUsername})
+
+  ## [Email](#table-of-contents)
+  Please contact me via email:
   [Email: ${data.email}](mailto:${data.email})
 
 `;
